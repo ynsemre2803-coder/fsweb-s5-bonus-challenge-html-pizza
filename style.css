@@ -1,34 +1,45 @@
-
+/* ==========================================
+   Genel Sıfırlama ve Temel Ayarlar
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
+    /* Elementlerin genişlik/yükseklik hesaplamalarına border ve padding'i dahil eder. 
+       Böylece kutu boyutları verdiğiniz değerlerde kalır, taşma yapmaz. */
     box-sizing: border-box;   
 }
+
 body {
     background-color: #FAF7F2;
 }
+
+/* ==========================================
+   Hero (Giriş / Banner) Bölümü
+   ========================================== */
 .hero {
-    
     width: 100%;
+    /* Ekran yüksekliğinin minimum %100'ünü kaplamasını sağlar (Tam ekran görünümü). */
     min-height: 100vh;
     background-image: url('./public/assets/iteration-1/home-banner.png');
+    /* Görselin en-boy oranını koruyarak alanı tamamen kaplamasını sağlar. */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
+    /* İçerikleri yatayda tam ortalamak için Flexbox kullanımı */
     display: flex;
     justify-content: center;
-
-    
 }
 
 .hero-content {
     display: flex;
+    /* İçerikleri (logo, slogan, buton) alt alta hizalamak için dikey eksen seçildi */
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin-top: 30px;
 }
+
 .logo {
     font-family: "Londrina Solid";
     font-weight: 400;
@@ -37,18 +48,20 @@ body {
     color: white; 
     margin: 0
 }
+
 .slogan-wrapper {
     margin-top: 20px;
 }
+
 .slogan-main {
     font-family: 'Roboto Condensed', sans-serif;
-
     font-size: 86px;
     font-weight: 300;
     line-height: 92px;
     color: white;
     margin: 0;
 }
+
 .slogan-title {
     font-family: 'Satisfy', sans-serif;
     font-weight: 400;
@@ -67,19 +80,26 @@ body {
     font-family: 'Barlow', sans-serif;
     font-weight: 600;
     font-size: 18px;
+    /* Metni buton içinde dikeyde ortalamak için yükseklik (height) değeri ile eşitlendi */
     line-height: 56px;
     border-style: none;
     margin-top: 15px;
 }
 
+/* ==========================================
+   Kategoriler Bölümü
+   ========================================== */
 .categories {
     background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Masaüstünde sağdan ve soldan geniş bir iç boşluk bırakarak içeriği daraltır */
     padding: 26px 426px;
     height: 94px;
+    /* Tasarımın devasa ekranlarda (örn. 2K/4K) aşırı dağılmasını önlemek için üst sınır */
     max-width: 1920px;
+    /* Maksimum genişliğe ulaşıldığında bloğu sayfada yatay olarak ortalar */
     margin: 0 auto;
 }
 
@@ -88,6 +108,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Elemanların arasına margin vermeden, flex elemanları arasında otomatik 60px boşluk bırakır */
     gap: 60px;
     margin: 0;
     padding: 0;
@@ -108,9 +129,11 @@ body {
 .category-list img {
     width: 42px;
     height: 42px;
-
 }
 
+/* ==========================================
+   Kampanyalar (Promo) Bölümü
+   ========================================== */
 .promo-section {
     display: flex;
     justify-content: center;
@@ -120,6 +143,7 @@ body {
     margin-top: 50px;
 }
 
+/* Kartların içindeki mutlak konumlandırılmış (absolute) elemanlar varsa onlara referans olması için */
 .promo-card-left,
 .burger-card,
 .courier-card {
@@ -135,7 +159,6 @@ body {
     background-size: cover;
     background-position: center;
     padding: 30px;
-
 }
 
 .promo-card-left h2 {
@@ -169,11 +192,11 @@ body {
     margin-top: 40px;
 }
 
+/* Sağ taraftaki iki küçük kartı (burger ve kurye) üst üste dizmek için kolon yapısı */
 .promo-card-right {  
     display: flex;
     flex-direction: column;
     gap: 10px;
-
 }
 
 .burger-card {
@@ -185,7 +208,6 @@ body {
     background-size: cover;
     background-position: center;
     padding: 20px;
-
 }
 
 .burger-card h3 {
@@ -246,7 +268,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
- 
 }
 
 .mid-title h4 {
@@ -255,7 +276,6 @@ body {
     font-size: 32px;
     line-height: 44.27px;
     color: #CE2829;
-
 }
 
 .mid-title h2 {
@@ -264,18 +284,21 @@ body {
     font-size: 42px;
     line-height: 56px;
     color: #292929;
-
 }
 
+/* ==========================================
+   Menü Navigasyon Bölümü
+   ========================================== */
 .menu-section {
     margin-top: 20px;
     width: 1070px;
+    /* 'auto' ifadesi sağ ve sol boşlukları eşitleyerek menüyü sayfada ortalar */
     margin: 50px auto 0;
-   
 }
 
 .menu-list {
     display: flex;
+    /* Elemanların ilkini en sola, sonuncusunu en sağa yaslayarak araları eşit açar */
     justify-content: space-between;
     list-style-type: none;
     margin: 0;
@@ -292,6 +315,7 @@ body {
     border: none;
 }
 
+/* Aktif / seçili olan menü elemanının vurgulanması için stil */
 .menu-item-active {
     display: flex;
     align-items: center;
@@ -300,7 +324,6 @@ body {
     border-radius: 50px;
     background-color: #292929;
     color: #FFF;
-
 }
 
 .menu-item img,
@@ -317,6 +340,9 @@ body {
     line-height: 32.4px;
 }
 
+/* ==========================================
+   Ürünler (Product) Listesi Bölümü
+   ========================================== */
 .product-section {
     display: flex;
     justify-content: space-between;
@@ -325,6 +351,7 @@ body {
 }
 
 .product-card {
+    /* Toplam 3 kart yan yana geldiğinde aradaki boşluklarla beraber 1070px'i dolduracak genişlik */
     width: 346px;
     background-color: #FFF;
     border-radius: 12px;
@@ -333,6 +360,7 @@ body {
 
 .product-card img {
     width: 100%;
+    /* Altındaki metinlerle satır arası boşluk sorununu çözmek için block yapıldı */
     display: block;
 }
 
@@ -346,6 +374,7 @@ body {
     color: #292929;
 }
 
+/* Kartın içindeki alt bilgileri (puan, yorum, fiyat) yan yana hizalar */
 .product-info {
     display: flex;
     justify-content: space-between;
@@ -369,6 +398,9 @@ body {
    color: #292929;
 }
 
+/* ==========================================
+   Footer (Sayfa Alt Bilgisi) Bölümü
+   ========================================== */
 .footer {
     width: 100%;
     background-color: #1a1a1a;
@@ -378,6 +410,7 @@ body {
 
 .footer-container {
     max-width: 1070px;
+    /* Mobil ekranlarda sağdan soldan yapışmaması için %90 genişlik sınırı */
     width: 90%;
     margin: 0 auto;
 }
@@ -385,6 +418,7 @@ body {
 .footer-top {
     display: flex;
     justify-content: space-between;
+    /* Elemanların (İletişim, Menü, Instagram) yukarıda aynı hizada başlamasını sağlar */
     align-items: flex-start;
     gap: 70px;
 }
@@ -415,7 +449,9 @@ body {
 .contact-item img {
     width: 28px;
     height: 28px;
+    /* İkonun en boy oranını koruyarak kutuya sığmasını sağlar */
     object-fit: contain;
+    /* Flex alan daraldığında ikonun büzüşmesini/küçülmesini engeller */
     flex-shrink: 0;
 }
 
@@ -461,8 +497,10 @@ body {
     width: 345px;
 }
 
+/* Instagram fotoğraflarını 3 sütunlu harika bir ızgara (Grid) yapısına kavuşturur */
 .instagram-grid {
     display: grid;
+    /* Her biri 105px genişliğinde 3 eşit sütun oluşturur */
     grid-template-columns: repeat(3, 105px);
     gap: 12px;
 }
@@ -470,6 +508,7 @@ body {
 .instagram-grid img {
     width: 105px;
     height: 105px;
+    /* Görsel kırpılsa bile bozulmadan kare alanın içine tam oturur */
     object-fit: cover;
     display: block;
 }
@@ -480,6 +519,7 @@ body {
     align-items: center;
     margin-top: 55px;
     padding: 28px 0;
+    /* Footer altındaki telif yazısı çizgisi için transparan beyaz border */
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -497,9 +537,15 @@ body {
     color: #FFFFFF;
 }
 
+/* ==========================================
+   Responsive (Mobil) Tasarım Ayarları
+   Ekran genişliği 768px ve daha küçük olduğunda devreye girer.
+   ========================================== */
 @media (max-width: 768px) {
     .hero {
+        /* Mobilde ekranın tamamını kaplamasın diye sabit min-height verildi */
         min-height: 560px;
+        /* Görselin üst kısımları (Örn: Logolar/Yüzler) mobilde kaybolmasın diye hizalama yukarı çekildi */
         background-position: center top;
     }
 
@@ -508,6 +554,7 @@ body {
         margin-top: 28px;
     }
 
+    /* Mobilde metin boyutları okunabilirlik adına küçültülüyor */
     .logo {
         font-size: 24px;
         line-height: 28px;
@@ -536,11 +583,13 @@ body {
 
     .categories {
         height: auto;
+        /* Sabit iç boşluklar sıfırlanarak mobil ekranın genişliğine adapte olması sağlandı */
         padding: 22px 0;
     }
 
     .category-list {
         width: 88%;
+        /* Yan yana sığmayan kategorileri mobilde 2'li grid sistemine geçirir */
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 18px 10px;
@@ -561,10 +610,12 @@ body {
         width: 88%;
         margin: 30px auto 0;
         padding: 0;
+        /* Kampanya kartlarını mobilde alt alta listelemek için yön değiştirildi */
         flex-direction: column;
         gap: 12px;
     }
 
+    /* Kartların genişlikleri mobil ekrana tam otursun diye %100 yapıldı */
     .promo-card-left,
     .promo-card-right,
     .burger-card,
@@ -632,6 +683,7 @@ body {
     }
 
     .menu-list {
+        /* Yemek menüsü butonlarını mobilde 2 sütun halinde alt alta dizer */
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
@@ -641,6 +693,7 @@ body {
     .menu-item-active {
         width: 100%;
         padding: 8px 10px;
+        /* Mobilde buton içindeki ikon ve metni sola yaslar */
         justify-content: flex-start;
     }
 
@@ -659,11 +712,13 @@ body {
     .product-section {
         width: 88%;
         margin: 28px auto 0;
+        /* Masaüstünde yan yana duran ürün kartlarını mobilde dikey olarak alt alta sıralar */
         flex-direction: column;
         gap: 24px;
     }
 
     .product-card {
+        /* Kartların mobil ekran genişliğine uyum sağlaması sağlandı */
         width: 100%;
         padding: 24px;
         border-radius: 8px;
@@ -692,6 +747,7 @@ body {
         width: 88%;
     }
 
+    /* Yan yana duran footer sütunlarını mobilde alt alta dikey formata getirir */
     .footer-top,
     .footer-left {
         flex-direction: column;
@@ -737,6 +793,7 @@ body {
     }
 
     .instagram-grid {
+        /* Mobilde instagram alanı daralacağı için sabit 105px yerine esnek %100 yapıldı */
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
     }
@@ -744,6 +801,7 @@ body {
     .instagram-grid img {
         width: 100%;
         height: auto;
+        /* Görsellerin esnek genişlikte bile tam kare (1:1 oranında) kalmasını sağlar */
         aspect-ratio: 1 / 1;
     }
 
